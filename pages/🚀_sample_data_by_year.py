@@ -15,14 +15,14 @@ st.write(
 
 year_choice = st.sidebar.selectbox(
     "Select Year in This Filter",
-    ("2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")
+    ("All", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")
 )
 
 
 @st.cache_data
 def read_sample(year_choice):
-    df_sample = f.read_data(year_choice)
-    return df_sample.head(10)
+    data = f.load_data(year_choice)
+    return data.head(10)
 
 
 st.write(read_sample(year_choice))

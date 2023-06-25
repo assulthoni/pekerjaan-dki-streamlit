@@ -10,3 +10,19 @@ def read_data(year) -> pd.DataFrame:
 
 def concat_data(dfs=[]) -> pd.DataFrame:
     return pd.concat(dfs, ignore_index=True)
+
+
+def read_all_data() -> pd.DataFrame:
+    dfs = []
+    for year in range(2013, 2022):
+        df = read_data(str(year))
+        dfs.append(df)
+    return concat_data(dfs)
+
+
+def load_data(year_choice):
+    if year_choice == "All":
+        data = read_all_data()
+    else:
+        data = read_data(year_choice)
+    return data
