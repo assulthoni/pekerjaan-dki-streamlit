@@ -23,6 +23,12 @@ st.markdown(
     - Streamlit is interactive. The visualizations created by Streamlit are interactive, which means that users can interact with them to explore the data.
     - Streamlit is portable. Streamlit apps can be run on any device that has a web browser.
 
+    ### Data Source
+    
+    Data is downloaded form Open Data DKI Jakarta Platform.
+
+    link : https://data.jakarta.go.id/dataset/jumlah-penduduk-dki-jakarta-berdasarkan-pekerjaan
+
     --A.S. Sulthoni--
     """
 )
