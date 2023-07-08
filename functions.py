@@ -2,8 +2,10 @@ import pandas as pd
 
 
 def read_data(year) -> pd.DataFrame:
-    data_path = './data/'
-    file_name = f'data-jumlah-penduduk-berdasarkan-pekerjaan-per-kelurahan-tahun-{year}.csv'
+    data_path = "./data/"
+    file_name = (
+        f"data-jumlah-penduduk-berdasarkan-pekerjaan-per-kelurahan-tahun-{year}.csv"
+    )
     file_path = data_path + file_name
     return pd.read_csv(file_path)
 
@@ -26,3 +28,10 @@ def load_data(year_choice):
     else:
         data = read_data(year_choice)
     return data
+
+
+def filter_data_by_city(df, city):
+    if city == "All":
+        return df
+    df = df.loc[df["nama_kabupaten/kota"] == city]
+    return df
